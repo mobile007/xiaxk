@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>村子</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+	<link rel="stylesheet" href="css/village.css" />
+</head>
+<body>
+	
+	<!-- 头部 -->
+	<header class="header">
+		<a href="#" id="back-a" class="back"></a>
+		<h2 id="title" class="title">下乡客</h2>
+		<!--<i class="search"></i>-->
+		<i class="download"></i>
+	</header>
+	
+	<!-- 主容器 -->
+	<div class="container">	
+		<!-- 村庄列表 -->
+		<div id="village-page" class="page" title="村子">			
+			<!-- 主体部分 -->
+			<section id="main" class="main"></section>			
+			<!-- 辅助map -->
+			<map id="tempmap"></map>		
+			
+			<!-- 尾部 -->
+			<footer class="footer">
+				<section>
+					<span id="hot-span-btn">按热度</span>
+					<span id="class-span-btn">分类</span>
+					<span id="km-span-btn">按距离</span>
+				</section>
+			</footer>
+		</div>
+		
+			
+		<!-- 标签类型 -->
+		<div id="tag-page" class="page" title="分类列表">
+			<section id="tag-box" class="tag-box">				
+				<div class="tag">
+					<h2>分类</h2>
+					<ul>
+						<li tagId="">全部</li>
+					</ul>
+				</div>				
+			</section>
+		</div>	
+	</div>
+	
+	<script type="text/javascript" src="js/jquery-2.1.0.min.js" ></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=tdQpg9YCvQELvz5NeaSNiI0i"></script>
+	<script type="text/javascript" src="js/public.js" ></script>
+	<script type="text/javascript" src="js/village.js" ></script>
+	<script>		
+		initPos( getVillage );
+	</script>
+</body>
+</html>

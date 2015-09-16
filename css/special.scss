@@ -1,0 +1,158 @@
+
+@import "base";
+//body{overflow: scroll;}
+//.container{overflow-x: hidden;}
+.page{
+    position:relative; float: none; background:#fff;
+//  overflow: visible; 
+    overflow-x: hidden;
+}
+.top{
+    height:180px; width:100%;
+    background:url(../img/cun1.jpg) no-repeat;
+    background-size:cover;
+    color:#fff; text-shadow: 0 0 5px #aaa;
+    article{
+        position:absolute; top:120px; left:10px; line-height:28px;
+        h2{ font-size:1.6rem; @extend .txtflow;}
+        p{ font-size:1.5rem; @extend .txtflow;}
+    }
+}
+
+//人物
+.people-box{
+    padding:8px 10px;line-height: 30px;
+    img{
+        width:70px; height:70px;float: left;
+        border-radius:50%; margin-right:10px;
+    }
+    h3{ font-size:1.6rem; padding-top:5px;}
+    p{font-size:1.5rem; @extend .txtflow; color:#666;}    
+    &:after{
+        content:"";
+        @extend .clear;
+    }
+}
+
+//内容
+.main{
+    padding:15px 10px;font-size: 1.5rem;
+    img{
+        margin:10px 0;width:100%; height:auto;
+    }
+}
+/* 评论 */
+.comment-box{
+    padding-bottom:70px;
+    h2{
+        background:#fefefe;
+        font-size:1.5rem; height:40px;line-height:40px;padding-left:20px;
+        border-top:2px solid #ddd;
+        border-bottom:2px solid #ddd;
+    }
+}
+.comment{
+    li{
+        padding:10px 20px;
+        border-bottom:1px solid #ddd;
+        h3{
+            font-size:1.5rem;
+            text-align: right;color:#666;height:40px; line-height: 40px;
+            img{
+                width:40px; height:40px; border-radius:50%;float:left;
+            }
+        }
+        article{
+            padding-top:10px;
+            font-size:1.5rem;
+        }
+    }
+}
+
+// 列表
+.special-box{
+    margin-bottom:5px;         
+    color: #fff; font-size:1.5rem;
+    position: relative;
+    &>a{display: block; color:#fff;}
+    .info{
+        position:absolute; left:10px; bottom:10px;
+        @extend .txtflow;
+    }
+    h4{ font-size:1.5rem;text-shadow: 0 0 4px #aaa;}
+    article{ font-size:1.2rem;height:20px;}  
+    
+    .zan{
+        position:absolute;right:5px; top:5px; border-radius:5px 0 0 5px;
+        background:rgba(200,200,200,0.5); height:20px; line-height: 20px;
+        padding:1px 2px;
+        font-size:1.4rem;
+        i{
+            float:left; width:20px; height:20px;
+            background: url(../img/zan.png) no-repeat center center;
+            background-size:16px auto;border-right:2px solid rgba(255,255,255,0.3);
+        }
+    }
+}
+
+
+// 个人信息
+.info-top{
+    height:180px; position:relative;
+    background:url(../img/cun1.jpg) no-repeat;
+    background-size:cover;
+    padding-top:10px;color:#fff;
+    img{
+        display: block; width:80px; height:80px;
+        border-radius:50%; margin:0 auto 6px auto;
+    }
+    h3{
+        height:30px; line-height:30px; text-align: center;
+        font-size:1.6rem; @include txtshadow(0,0,5px,#222);
+    }
+    article{
+        position:absolute; left: 0;bottom:0;
+        padding:5px 10px;font-size:1.2rem; line-height:15px;
+    }
+}
+
+.info-tab{
+    height:40px; line-height: 40px; 
+    display: -ms-flexbox;position:relative;
+    display: flex; border-bottom:1px solid #eee;
+    .line{
+        content: "";
+        position:absolute; width:50%; height:4px;
+        bottom:-2px;left:0;
+        background-color:$themeColor;
+    }
+    h4{
+        -webkit-flex: 1; display: block;        
+        flex: 1; width:50%;color:#000; float:left;
+        text-align: center;font-size:1.6rem;
+    }
+    .cur{color:$themeColor;}
+}
+
+// 信息展示
+.info-box{
+    position: relative;padding:5px;
+    margin:0 auto;
+}
+.info-about{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; text-indent: 3rem;
+    background: #fff; z-index: 10;padding:5px;
+    left: 100%;font-size:1.5rem;
+    position: absolute;top:0; bottom:0;
+    overflow-y: scroll;
+}
+
+.goFather_icon{ 
+    z-index:100; 
+    background:url(/public/m_img/arraw_left_main@2x.png) no-repeat; 
+    background-size:20px auto; display:block; width:20px; height:31px;    
+    position:absolute; left:10px; top:10px;
+}
+
+

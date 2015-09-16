@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>游记</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0" />
+		<meta name="format-detection" content="telephone=no;email=no" /><meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		<meta name="apple-mobile-web-app-title" content="游记" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<link rel="stylesheet" href="css/base.css" />
+		<style>
+			.main{padding:50px 0;}
+			.travel-box{ padding:10px 10px 5px 10px;}
+			.travel-box:nth-child(2n){ background:#fafafa; }
+			.travel-box a{color:#111; }
+			.travel-box .img{ 
+				position:relative;margin-right:10px;
+				border-radius:3px; float:left;
+			}
+			.img img{ border-radius:3px;}
+			.img i{ 
+				position:absolute; left:6px;top:6px;
+				text-align: center; height:18px; line-height: 18px; width:36px;
+				background-color:#f00; color:#fff;
+			}
+			.travel-box h3{ font-size:1.5rem;overflow: hidden; text-overflow: ellipsis;white-space: nowrap;
+				height:46px; line-height: 26px;
+			}
+			.content{ font-size:1.3rem;color:#555; }
+			.content span{ margin-left:20px;}
+			.content i{ float:right;}
+		</style>
+	</head>
+	<body>
+		
+		<!-- 头部 -->
+		<header class="header">
+			<a href="#" id="back-a" class="back back-arrow"></a>
+			<h2 id="title" class="title">游记</h2>
+		</header>
+		
+		<!-- 主体内容 -->
+		<div class="container">			
+			<div class="main" id="main"></div>			
+		</div>
+		
+		<script type="text/javascript" src="js/jquery-2.1.0.min.js" ></script>
+		<script type="text/javascript" src="js/public.js" ></script>
+		<script>
+			
+			var Param = {
+				api_name: "VillageRaiders",
+				pageNum: 1
+			};
+			
+			$(function(){
+				load_data();//加载数据
+				$(window).on( "scroll", function(e){	
+					if( $(this).scrollTop()+bodyH === document.body.scrollHeight){	
+						load_data();
+					}		
+				});
+				
+				console.log( navigator.userAgent );
+				
+			});
+			
+			//数据加载
+			function load_data(){				
+				loading();
+				$.ajax({
+					url: dataUrl+"/"+Param.api_name,
+					type: "get",
+					data: Param,
+					dataType: "json",
+					success: function(data){	
+						data = data.lst;
+						var len = data.length;
+						var arr = [];
+						for(var i=0; i<len; i++){		
+							
+							var obj = data[i];
+							arr.push( '<div class="travel-box">');							
+							arr.push('<a href="'+obj.url+'"><div class="img">' );
+							arr.push('<img src="'+obj.photoUrl+'" width="90px" height="60px" />');
+							obj.isSuggest=="1" && arr.push('<i>精选</i>');
+							arr.push('</div><h3>'+obj.title+'</h3>');
+							arr.push('<section class="content"><time>'+obj.playTime+'</time>');
+							arr.push('<span>1天</span><i>推荐'+obj.suggestPeople+'后</i></section></a></div>');						
+						}		
+						
+						//无数据
+						if( Param.pageNum == 1 && arr.length == 0 ){
+							arr.push( '<div class="no-data">没有符合条件的数据</div>' );		
+						}
+						if(arr.length>0) Param.pageNum++;  
+						
+						//添加到页面
+						var $content = $(arr.join(""));
+						//添加
+						$("#main").append( $content );
+						$content.fadeIn(200);
+						hideLoad();
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

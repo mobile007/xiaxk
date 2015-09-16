@@ -1,0 +1,116 @@
+
+@import "mixin";
+@import "base"; 
+
+
+.town-box{
+    margin-bottom:5px;         
+    color: #fff; font-size:1.5rem;
+    position: relative;
+    &>a{display: block; color:#fff;}
+    .info{
+        position:absolute; left:10px; top:16px;
+    }
+    h3{
+        font-size:1.5rem;text-shadow: 0 0 4px #aaa;
+        border-left:4px solid #58BAC9; margin-bottom:5px; padding-left:5px;
+    }
+    address,article{ font-size:1.3rem; background-repeat:no-repeat;
+        background-size:12px; padding-left:15px; height:20px;
+    }
+    address{background-image:url(../img/map.png);}
+    article{background-image:url(../img/man.png); background-position: 0 3px;}
+    ul{
+        position:absolute;bottom:10px;left:10px;
+    }
+    li{
+        border-radius: 3px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 1.4rem;
+        margin-right: 3px;
+        float: left; margin-bottom:3px;
+        background: #aaa url(../img/dian.png) no-repeat 5px center;
+        background-size: 3px auto;
+        padding: 0 10px 0 15px;
+    }
+}
+
+//标题
+.title{
+    p{
+        width:160px; margin:0 auto; margin-top:9px; color:$themeColor;
+        border:1px solid $themeColor; border-radius:5px;
+        &:after{
+            content: "";
+            @extend .clear;
+        }
+    }
+    span{
+        text-align: center; width:80px; box-sizing: border-box;
+        float:left;font-size:1.4rem; line-height: 32px; height:32px;
+    }
+    span:first-child{border-right:1px solid $themeColor;}    
+}
+
+// 控制面板
+.active-box{
+    position:absolute;left:0;right:0;
+    background:#e6e6e6; z-index: 10;
+    @include transition(all, 0.2s);
+    h3{
+        font-size:1.6rem; text-align: center;
+        border-bottom:1px solid #ccc; height:42px; line-height: 42px;
+    }
+    .active-ul{
+        li{
+            width:88px; height:36px; line-height:36px;
+            text-align: center; border:1px solid #ccc;font-size:1.5rem;
+            background:#fff; float: left; margin:0 10px 10px 0;
+        }
+        li:last-child{margin-bottom:0;}
+        .cur{
+            background:$themeColor; border-color:$themeColor;
+            color:#fff;
+        }
+        
+        padding:12px 8px;
+        &:after{
+            content:"";
+            @extend .clear;
+        }
+    }
+}
+.active{ top:0 !important;}
+#active-time-box{height:153px; top:-153px;}
+#active-order-box{ height:110px; top:-110px; }
+
+// 活动列表
+.activity-page{
+    .town-box{
+        h3{ border-left:none; padding-left:0; }
+        address,article{
+            background:none;
+            border-left:4px solid #58BAC9; padding-left:5px;
+        }
+    }
+    .recommend{
+        width:70px; height:28px; line-height: 28px;text-align: center;border-radius:5px;
+        background:rgba(0,0,0,0.7); color:#fff; position:absolute; right:20px; bottom:15px;
+        @include boxshadow(0,0,3px,#fff); 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

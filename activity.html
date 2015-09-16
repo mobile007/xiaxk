@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>活动</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/town.css" />
+	</head>
+
+	<body>
+
+		<!-- 头部 -->
+		<header class="header">
+			<a href="javascript:history.back();" class="back"></a>
+			<h2 id="title" class="title">
+				<p>
+					<span id="active-time-btn" data-target="#active-time-box">全部</span>
+					<span id="active-order-btn" data-target="#active-order-box">附近</span>
+				</p>
+			</h2>
+			<!--<i class="search"></i>-->
+			
+			<!-- 活动时间 -->
+			<div id="active-time-box" class="active-box">
+				<h3>活动时间</h3>
+				<ul class="active-ul" data-target="#active-time-btn">
+					<li class="cur" data-value="0" data-name="type">全部</li>
+					<li data-value="1" data-name="type">今天</li>
+					<li data-value="2" data-name="type">明天</li>
+					<li data-value="3" data-name="type">本周末</li>
+				</ul>
+			</div>
+			
+			<!-- 排序 -->
+			<div id="active-order-box" class="active-box">
+				<h3>排序</h3>
+				<ul class="active-ul" data-target="#active-order-btn">
+					<li class="cur" data-value="0" data-name="sortType">附近</li>
+					<li data-value="1" data-name="sortType">热门</li>
+					<li data-value="2" data-name="sortType">最新</li>
+				</ul>
+			</div>			
+		</header>
+		
+		<!-- 蒙版 -->
+		<div id="active-box-rgba" class="rgba"></div>
+		
+		<!-- 主容器 -->
+		<div id="main" class="page activity-page">			
+			<!-- 主体部分 -->
+			<!--<div class="town-box">
+				<a href="#">				
+					<img width="100%" src="http://124.232.137.177:86/images/ViliageImg/181861803/bigimage/2015324103548425243547885.jpg" />
+					<div class="info">
+						<h3>锦绣生态农庄</h3>
+						<address>湖南省郴州市苏仙区</address>
+						<article>距离：254.98km 即将开始</article>
+					</div>
+					<span class="recommend">推荐</span>					
+				</a>
+			</div>	-->
+		</div>
+		
+		<!-- 辅助map -->
+		<map id="tempmap"></map>		
+		<script type="text/javascript" src="js/jquery-2.1.0.min.js" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=tdQpg9YCvQELvz5NeaSNiI0i"></script>
+		<script type="text/javascript" src="js/public.js" ></script>
+		<script type="text/javascript" src="js/activity.js" ></script>
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

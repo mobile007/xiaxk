@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>农庄</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/village.css" />
+		<link rel="stylesheet" href="css/town.css" />
+	</head>
+
+	<body>
+
+		<!-- 头部 -->
+		<header class="header">
+			<a href="#" id="back-a" class="back"></a>
+			<h2 id="title" class="title">下乡客</h2>
+			<!--<i class="search"></i>-->
+		</header>
+		
+		<!-- 主容器 -->
+		<div class="container">	
+			<!-- 村庄列表 -->
+			<div id="village-page" class="page" title="农庄">		
+				<!-- 主体部分 -->
+				<div id="main" class="main">
+					<div class="town-box">
+						<a href="#">		
+							<img width="100%" src="http://124.232.137.177:86/images/ViliageImg/181861803/bigimage/2015324103548425243547885.jpg" />
+							<div class="info">
+								<h3>锦绣生态农庄</h3>
+								<address>距离: 10.56km</address>
+								<article>已有15人评论</article>
+							</div>
+							
+							<ul>
+								<li data-tarid="9" style="background-color:#2EACEB">垂钓</li>
+								<li data-tarid="11" style="background-color:#D74700">露营</li>
+								<li data-tarid="13" style="background-color:#7A6996">漂流</li>
+								<li data-tarid="20" style="background-color:#2EACEB">骑行</li>
+							</ul>
+						</a>
+					</div>
+				</div>
+				
+				<!-- 辅助map -->
+				<map id="tempmap"></map>	
+				
+				<!-- 尾部 -->
+				<footer class="footer">
+					<section>
+						<span id="hot-span-btn">按热度</span>
+						<span id="class-span-btn">分类</span>
+						<span id="km-span-btn">按距离</span>
+					</section>
+				</footer>
+			</div>
+			
+			
+			<!-- 标签类型 -->
+			<div id="tag-page" class="page" title="分类列表">
+				<section id="tag-box" class="tag-box">				
+					<div class="tag">
+						<h2>分类</h2>
+						<ul>
+							<li tagId="">全部</li>
+						</ul>
+					</div>		
+				</section>
+			</div>	
+		</section>
+		
+		<script type="text/javascript" src="js/jquery-2.1.0.min.js" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=tdQpg9YCvQELvz5NeaSNiI0i"></script>
+		<script type="text/javascript" src="js/public.js" ></script>
+		<script type="text/javascript" src="js/village.js" ></script>
+		<script>		
+			initPos( getVillage, 2 );
+		</script>
+
+	</body>
+
+</html>
